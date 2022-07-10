@@ -2,6 +2,7 @@ package com.honeywell.webapp.atm.controllers;
 
 import com.honeywell.webapp.atm.dto.Account;
 import com.honeywell.webapp.atm.services.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,8 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class AccountController {
-    AccountService accountService = new AccountService();
+    @Autowired
+    AccountService accountService;
 
     private void setAccountModel(Model model, String id) {
         Account account = accountService.getAccount(id);

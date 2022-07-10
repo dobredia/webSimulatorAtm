@@ -4,6 +4,7 @@ import com.honeywell.webapp.atm.dto.Account;
 import com.honeywell.webapp.atm.dto.Card;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.honeywell.webapp.atm.Constants.ConstantsAccount.*;
-
+@Service
 public class AccountService {
 
     RestTemplate restTemplate = new RestTemplate();
