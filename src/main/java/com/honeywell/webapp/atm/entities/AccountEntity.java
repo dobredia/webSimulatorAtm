@@ -1,24 +1,25 @@
-package com.honeywell.webapp.atm.dto;
+package com.honeywell.webapp.atm.entities;
 
+import com.honeywell.webapp.atm.dto.Card;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-public class Account implements Serializable {
+public class AccountEntity {
+
     Integer id;
     Double balance;
     String iban;
     List<Card> cardList = new ArrayList<>();
 
-    public Account() {
+    public AccountEntity() {
     }
 
-    public Account(Integer id, Double balance, String iban, List<Card> cardList) {
+    public AccountEntity(Integer id, Double balance, String iban, List<Card> cardList) {
         this.id = id;
         this.balance = balance;
         this.iban = iban;

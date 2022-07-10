@@ -3,9 +3,11 @@ package com.honeywell.webapp.atm.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class Card {
+public class Card implements Serializable {
     String cardNumber;
     String pin;
     Account accountInformation;

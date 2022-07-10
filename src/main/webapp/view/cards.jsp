@@ -7,8 +7,7 @@
 <body>
 <div>
     <c:forEach items="${cards}" var="card">
-        <div>${card.cardNumber}</div>
-        <a href="/books/${card.cardNumber}">${card.cardNumber}</a>
+        <div>${card.cardNumber}</div><a href="/cards/${card.cardNumber}">${card.pin}</a>
         <div>${card.pin}</div>
         <br>
     </c:forEach>

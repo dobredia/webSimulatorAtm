@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Book</title>
+    <title>Card</title>
     <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
 </head>
 <body>
