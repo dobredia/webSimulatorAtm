@@ -17,7 +17,7 @@ public class LoginController {
     CardService cardService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login( Model model) {
+    public String login(Model model) {
         if (model.getAttribute("updateAccountSuccess") == null) {
             model.addAttribute("updateAccountSuccess", true);
         }

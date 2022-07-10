@@ -7,22 +7,19 @@
     <title>Change PIN</title>
 </head>
 <body>
-<div>
-    Welcome to Change PIN!
-</div>
+    <div>
+        Welcome to Change PIN!
+    </div>
+    <c:if test="${pinChanged}">
+        Pin changed!
+    </c:if>
+    <c:url var="changePin" value="/changePin"/>
+    <form action="${changePin}" method="post" >
+        <label>new Pin: </label>
+         <input type="text"  name="newPin"/>
 
-<c:if test="${!updateAccountSuccess}">
-    Unauthorized
-</c:if>
-
-<c:url var="changePin" value="/changePin"/>
-<form action="${changePin}" method="post" >
-    <label>new Pin: </label>
-    <label>
-        <input type="text"  name="newPin"/>
-    </label>
-    <input type="submit" value="submit"/>
-</form>
-<a href="/home" >Back</a>
+        <input type="submit" value="submit"/>
+    </form>
+    <a href="/commands/${account.id}" >Back</a>
 </body>
 </html>

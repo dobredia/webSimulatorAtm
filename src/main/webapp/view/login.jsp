@@ -6,26 +6,19 @@
     <title>Login</title>
 </head>
 <body>
-<div>
-    Welcome to login!
-</div>
-<c:if test="${!updateAccountSuccess}">
-    Unauthorized
-</c:if>
-
-
-<c:url var="login" value="/login"/>
-<form action="${login}" method="post" >
-    <label>card number: </label>
-    <label>
+    <div>
+        Welcome to login!
+    </div>
+    <c:if test="${!updateAccountSuccess}">
+        Unauthorized
+    </c:if>
+    <c:url var="login" value="/login"/>
+    <form action="${login}" method="post" >
+        <label>card number: </label>
         <input type="text"  name="cardNumber"/>
-    </label>
-    <label>password: </label>
-    <label>
+        <label>password: </label>
         <input type="text"  name="pin"/>
-    </label>
-    <input type="submit" value="submit"/>
-</form>
-
+        <input type="submit" value="submit"/>
+    </form>
 </body>
 </html>

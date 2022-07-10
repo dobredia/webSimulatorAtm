@@ -5,7 +5,10 @@ import com.honeywell.webapp.atm.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -27,33 +30,33 @@ public class AccountController {
     }
 
     @RequestMapping("/account/{id}/balance")
-    public String getBalance(Model model, @PathVariable String id){
+    public String getBalance(Model model, @PathVariable String id) {
         setAccountModel(model, id);
         return "accountBalance";
     }
 
     @RequestMapping(value = "/account/{id}/withdrawCash", method = RequestMethod.GET)
-    public String withdrawCash(Model model, @PathVariable String id){
+    public String withdrawCash(Model model, @PathVariable String id) {
         setAccountModel(model, id);
         return "withdrawCash";
     }
 
     @RequestMapping(value = "/account/{id}/depositCash", method = RequestMethod.GET)
-    public String depositCash(Model model, @PathVariable String id){
+    public String depositCash(Model model, @PathVariable String id) {
         setAccountModel(model, id);
         return "depositCash";
     }
 
     @RequestMapping(value = "/account/{id}/withdrawCash", method = RequestMethod.POST)
-    public RedirectView withdrawCash( @RequestParam("balance1") Double balance, @PathVariable String id, RedirectAttributes redirectAttributes){
-        final RedirectView redirectView = new RedirectView("/account/"+id+"/withdrawCash", true);
+    public RedirectView withdrawCash(@RequestParam("balance1") Double balance, @PathVariable String id, RedirectAttributes redirectAttributes) {
+        final RedirectView redirectView = new RedirectView("/account/" + id + "/withdrawCash", true);
         updateCash(id, -balance, redirectAttributes);
         return redirectView;
     }
 
     @RequestMapping(value = "/account/{id}/depositCash", method = RequestMethod.POST)
-    public RedirectView depositCash( @RequestParam("balance1") Double balance, @PathVariable String id, RedirectAttributes redirectAttributes){
-        final RedirectView redirectView = new RedirectView("/account/"+id+"/depositCash", true);
+    public RedirectView depositCash(@RequestParam("balance1") Double balance, @PathVariable String id, RedirectAttributes redirectAttributes) {
+        final RedirectView redirectView = new RedirectView("/account/" + id + "/depositCash", true);
         updateCash(id, balance, redirectAttributes);
         return redirectView;
     }

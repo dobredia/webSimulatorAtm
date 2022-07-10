@@ -8,11 +8,10 @@
     <script src="${pageContext.request.contextPath}/static/js/commands.js"></script>
 </head>
 <body>
-<a href="/account/${account.id}/balance">view available balance</a><br>
-<a href="/account/${account.id}/withdrawCash">withdraw cash</a><br>
-<a href="/account/${account.id}/depositCash">deposit cash</a><br>
-<a href="/account/${account.id}">change card PIN</a>
-<div>change card PIN</div>
-<a href="/login">logoff user</a>
+    <a href="/account/${account.id}/balance">view available balance</a><br>
+    <a href="/account/${account.id}/withdrawCash">withdraw cash</a><br>
+    <a href="/account/${account.id}/depositCash">deposit cash</a><br>
+    <a href="/changePin">change card PIN</a><br>
+    <a href="/login">logoff user</a>
 </body>
 </html>
