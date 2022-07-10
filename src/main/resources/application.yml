@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  mvc:
+    view:
+      prefix: /view/
+      suffix: .jsp
+  profiles:
+    active: dev
+  main:
+    banner-mode: off
