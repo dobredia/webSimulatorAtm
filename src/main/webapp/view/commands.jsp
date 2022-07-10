@@ -8,9 +8,9 @@
     <script src="${pageContext.request.contextPath}/static/js/commands.js"></script>
 </head>
 <body>
-<a href="/account/${account.id}/balance">view available balance</a>
-<div>withdraw cash</div>
-<div>deposit cash</div>
+<a href="/account/${account.id}/balance">view available balance</a><br>
+<a href="/account/${account.id}/withdrawCash">withdraw cash</a><br>
+<a href="/account/${account.id}/depositCash">deposit cash</a>
 <div>change card PIN</div>
 <div>logoff user</div>
 </body>

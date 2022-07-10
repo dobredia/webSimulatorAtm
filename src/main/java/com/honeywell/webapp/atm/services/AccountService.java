@@ -2,10 +2,15 @@ package com.honeywell.webapp.atm.services;
 
 import com.honeywell.webapp.atm.dto.Account;
 import com.honeywell.webapp.atm.dto.Card;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import static com.honeywell.webapp.atm.Constants.ConstantsAccount.URL_GET_ACCOUNT_INFORMATION;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.honeywell.webapp.atm.Constants.ConstantsAccount.*;
 
 public class AccountService {
 
@@ -13,12 +18,14 @@ public class AccountService {
 
     public Account getAccount(String id){
         String urlGetCardInformation = URL_GET_ACCOUNT_INFORMATION + id;
-        ResponseEntity<String> response
-                = restTemplate.getForEntity(urlGetCardInformation, String.class);
-        Account account = restTemplate
-                .getForObject(urlGetCardInformation, Account.class);
+        Account account = restTemplate.getForObject(urlGetCardInformation, Account.class);
         return account;
     }
 
-
+    public Account updateBalance(Account account, String cash) {
+        String urlPostAccountUpdateBalance = URL_ACCOUNT + account.getId() + URL_BALANCE + cash;
+        HttpEntity<Account> requestEntity = new HttpEntity<>(account);
+        account = restTemplate.postForObject(urlPostAccountUpdateBalance,requestEntity ,Account.class);
+        return account;
+    }
 }

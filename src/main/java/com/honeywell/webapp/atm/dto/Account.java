@@ -24,4 +24,5 @@ public class Account implements Serializable {
         this.iban = iban;
         this.cardList = cardList;
     }
+
 }
