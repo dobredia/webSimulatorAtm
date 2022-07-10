@@ -25,7 +25,7 @@ public class AccountService {
     public Account updateBalance(Account account, String cash) {
         String urlPostAccountUpdateBalance = URL_ACCOUNT + account.getId() + URL_BALANCE + cash;
         HttpEntity<Account> requestEntity = new HttpEntity<>(account);
-        account = restTemplate.postForObject(urlPostAccountUpdateBalance,requestEntity ,Account.class);
+        account = restTemplate.postForObject(urlPostAccountUpdateBalance,requestEntity, Account.class);
         return account;
     }
 }

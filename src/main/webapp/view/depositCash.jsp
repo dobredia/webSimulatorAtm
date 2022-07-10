@@ -13,8 +13,9 @@
 <c:url var="update_balance_url" value="/account/${account.id}/depositCash"/>
 <form action="${update_balance_url}" method="post" >
     <label>Deposit cash: </label>
-    <input type="text"  name="balance1" ></input>
-
+    <label>
+        <input type="text"  name="balance1"/>
+    </label>
     <input type="submit" value="submit"/>
 </form>
 <a href="/commands/${account.id}" >Back</a>
